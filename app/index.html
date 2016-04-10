@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="en" ng-app="rrtClientApp">
+
+<head>
+  <meta charset="utf-8">
+  <title>RRT Client</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.6/darkly/bootstrap.min.css">
+  <!--<link rel="stylesheet" href="css/app.css">-->
+  <script src="bower_components/angular/angular.js"></script>
+  <script src="js/controllers.js"></script>
+</head>
+
+<body ng-controller="carController">
+  <div id="content">
+    <h1>{{title}}</h1>
+    <ul class="list-group">
+      <li class="list-group-item" ng-repeat="car in cars">
+        <span>{{car.model}}</span>
+        <p>{{car.manufacturer}}</p>
+      </li>
+    </ul>
+    <p>Total number of cars: {{cars.length}}</p>
+  </div>
+</body>
+
+</html>

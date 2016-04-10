@@ -1,0 +1,29 @@
+{
+  "name": "rrt-client",
+  "version": "0.1.0",
+  "description": "Client for Real Racing Telemetry Api.",
+  "main": "index.js",
+  "devDependencies": {
+    "karma": "^0.13.22",
+    "karma-chrome-launcher": "^0.2.3",
+    "karma-jasmine": "^0.3.8",
+    "protractor": "^3.2.2",
+    "http-server": "^0.9.0",
+    "tmp": "^0.0.28",
+    "shelljs": "^0.6.0"
+  },
+  "scripts": {
+    "start": "http-server -a 0.0.0.0 -p 8000",
+    "test": "node node_modules/karma/bin/karma start test/karma.conf.js",
+    "protractor": "protractor test/protractor-conf.js",
+    "update-webdriver": "webdriver-manager update"
+  },
+  "keywords": [
+    "loopback",
+    "api",
+    "client",
+    "angularjs"
+  ],
+  "author": "Optimized4U",
+  "license": "MIT"
+}

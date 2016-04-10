@@ -1,0 +1,14 @@
+{
+  "name": "realracingtelemetry-client",
+  "description": "The client side code for Real Racing Telemetry API.",
+  "version": "0.1.0",
+  "homepage": "http://localhost/api/",
+  "license": "MIT",
+  "private": true,
+  "dependencies": {
+    "angular": "1.4.x",
+    "angular-mocks": "1.4.x",
+    "jquery": "~2.1.1",
+    "bootstrap": "~3.1.1"
+  }
+}
