@@ -1,43 +1,43 @@
 <div id="container-fluid">
-    <h1 class="text-center">{{title}}</h1>
-    <hr>
-    <div class="row">
-      <div class="col-md-2">
-        <!--Sidebar content-->
-        <div class="panel panel-default">
-          <div class="panel-body">
-            <form class="form-vertical">
-              <fieldset>
-                <legend>Filter Results</legend>
-                <div class="form-group">
-                  <label for="search" class="control-label">Search:</label>
-                  <input type="text" class="form-control" id="search" ng-model="query">
-                </div>
-                <div class="form-group">
-                  <label for="sort" class="control-label">Sort by:</label>
-                  <select class="form-control" id="sort" ng-model="orderProp">
-                    <option value="model">Car (Asc)</option>
-                    <option value="-model">Car (Dec)</option>
-                    <option value="manufacturerId">Manufacturer (Asc)</option>
-                    <option value="-manufacturerId">Manufacturer (Dec)</option>
-                  </select>
-                </div>
-              </fieldset>
-            </form>
-          </div>
+  <h1 class="text-center">{{title}}</h1>
+  <hr>
+  <div class="row">
+    <div class="col-md-2">
+      <!--Sidebar content-->
+      <div class="panel panel-default">
+        <div class="panel-body">
+          <form class="form-vertical">
+            <fieldset>
+              <legend>Filter Results</legend>
+              <div class="form-group">
+                <label for="search" class="control-label">Search:</label>
+                <input type="text" class="form-control" id="search" ng-model="query">
+              </div>
+              <div class="form-group">
+                <label for="sort" class="control-label">Sort by:</label>
+                <select class="form-control" id="sort" ng-model="orderProp">
+                  <option value="model">Car (Asc)</option>
+                  <option value="-model">Car (Dec)</option>
+                  <option value="manufacturerId">Manufacturer (Asc)</option>
+                  <option value="-manufacturerId">Manufacturer (Dec)</option>
+                </select>
+              </div>
+            </fieldset>
+          </form>
         </div>
       </div>
+    </div>
 
-      <div class="col-md-10">
-        <!--Body content-->
+    <div class="col-md-10">
+      <!--Body content-->
 
-        <ul class="cars list-group">
-          <li class="list-group-item" ng-repeat="car in cars | filter:query | orderBy:orderProp">
-            <a href="#/car-detail/{{car.id}}">{{car.model}}</a>
-            <p>Manufacturer Id: {{car.manufacturerId}}</p>
-          </li>
-        </ul>
-        <p>Total number of cars: {{cars.length}}</p>
-      </div>
+      <ul class="cars list-group">
+        <li class="list-group-item" ng-repeat="car in cars | filter:query | orderBy:orderProp">
+          <a href="#/car-detail/{{car.id}}">{{car.model}}</a>
+          <p>Manufacturer Id: {{car.manufacturerId}}</p>
+        </li>
+      </ul>
+      <p>Total number of cars: {{cars.length}}</p>
     </div>
   </div>
+</div>

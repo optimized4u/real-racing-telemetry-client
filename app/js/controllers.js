@@ -2,16 +2,21 @@
 
 /* Controllers */
 
-var rrtClientApp = angular.module('rrtClientApp', []);
+var rrtClientAppControllers = angular.module('rrtClientAppControllers', []);
 
-rrtClientApp.controller('carController', ['$scope', '$http',
+rrtClientAppControllers.controller('CarListCtrl', ['$scope', '$http',
   function($scope, $http) {
-
-  $scope.title = 'Admin > Cars and Manufacturers.'
 
   $http.get('data/cars.json').success(function(data) {
     $scope.cars = data;
   });
   // dropdown order by default selection.
   $scope.orderProp = 'manufacturerId';
+  // page title
+  $scope.title = 'Admin > Cars and Manufacturers.';
 }]);
+
+rrtClientAppControllers.controller('CarDetailCtrl', ['$scope', '$routeParams',
+  function($scope, $routeParams) {
+    $scope.carId = $routeParams.carId;
+  }]);
