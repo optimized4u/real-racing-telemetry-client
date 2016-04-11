@@ -3,27 +3,38 @@
 /* jasmine specs for controllers go here */
 describe('Real Racing Telemetry Client controllers', function() {
 
-  describe('carController', function(){
+  describe('carController', function() {
 
-    var scope, ctrl;
+    var scope, ctrl, $httpBackend;
 
     beforeEach(module('rrtClientApp'));
 
-    beforeEach(inject(function($controller) {
-      scope = {};
-      ctrl = $controller('carController', {$scope:scope});
+    // The injector ignores leading and trailing underscores here (i.e. _$httpBackend_).
+    // This allows us to inject a service but then attach it to a variable
+    // with the same name as the service in order to avoid a name conflict.
+    beforeEach(inject(function(_$httpBackend_, $rootScope, $controller) {
+      $httpBackend = _$httpBackend_;
+      $httpBackend.expectGET('data/cars.json').
+        respond([{ model: 'Atom 3.5' }, { model: 'Atom V8' }]);
+
+      scope = $rootScope.$new();
+      ctrl = $controller('carController', { $scope: scope });
     }));
 
-    it('should create "cars" model with 4 cars', inject(function($controller) {
-      expect(scope.cars.length).toBe(4);
-    }));
+    it('should create "cars" model with 2 cars fetched from xhr', function() {
+      expect(scope.cars).toBeUndefined();
+      $httpBackend.flush();
+
+      expect(scope.cars).toEqual([{ model: 'Atom 3.5' },
+        { model: 'Atom V8' }]);
+    });
 
     it('should create title', inject(function($controller) {
-      expect(scope.title).toBe("Admin for Cars and Manufacturers.");
+      expect(scope.title).toBe("Admin > Cars and Manufacturers.");
     }));
 
-    it('should set the default value of orderProp model', function() {
-      expect(scope.orderProp).toBe('model');
+    it('should set the default value of orderProp manufacturer', function() {
+      expect(scope.orderProp).toBe('manufacturerId');
     });
   });
 });
