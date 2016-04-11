@@ -12,6 +12,8 @@ rrtClientApp.controller('carController', function($scope) {
     {'model': 'R8 V10',
      'manufacturer': 'Audi'},
     {'model': 'LaFerrari',
-     'manufacturer': 'Ferrari'}
+     'manufacturer': 'Ferrari'},
+     { 'model': 'Fusion',
+       'manufacturer': 'Ford' }
   ];
 });
