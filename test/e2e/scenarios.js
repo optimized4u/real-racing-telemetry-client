@@ -16,10 +16,10 @@ describe('Real Racing Telemetry Client App', function() {
       var carList = element.all(by.repeater('car in cars'));
       var query = element(by.model('query'));
 
-      expect(carList.count()).toBe(3);
+      expect(carList.count()).toBe(4);
 
-      query.sendKeys('focus');
-      expect(carList.count()).toBe(1);
+      query.sendKeys('ford');
+      expect(carList.count()).toBe(2);
 
       query.clear();
       query.sendKeys('audi');

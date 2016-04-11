@@ -7,11 +7,11 @@ describe('Real Racing Telemetry Client controllers', function() {
 
     beforeEach(module('rrtClientApp'));
 
-    it('should create "cars" model with 3 cars', inject(function($controller) {
+    it('should create "cars" model with 4 cars', inject(function($controller) {
       var scope = {},
           ctrl = $controller('carController', {$scope:scope});
 
-      expect(scope.cars.length).toBe(3);
+      expect(scope.cars.length).toBe(4);
     }));
 
     it('should create title', inject(function($controller) {
