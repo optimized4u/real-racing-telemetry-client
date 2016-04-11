@@ -55,7 +55,7 @@
       <div class="col-md-10">
         <!--Body content-->
 
-        <ul class="list-group">
+        <ul class="cars list-group">
           <li class="list-group-item" ng-repeat="car in cars | filter:query | orderBy:orderProp">
             <a href="#/car-detail/{{car.id}}">{{car.model}}</a>
             <p>Manufacturer Id: {{car.manufacturerId}}</p>
