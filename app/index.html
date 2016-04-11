@@ -19,6 +19,11 @@
 
         Search:
         <input ng-model="query">
+        Sort by:
+        <select ng-model="orderProp">
+          <option value="model">Car</option>
+          <option value="manufacturer">Manufacturer</option>
+        </select>
 
       </div>
 
@@ -26,15 +31,15 @@
         <!--Body content-->
 
         <ul class="list-group">
-          <li class="list-group-item" ng-repeat="car in cars | filter:query">
-             <span>{{car.model}}</span>
-             <p>{{car.manufacturer}}</p>
-           </li>
-          </ul>
-          <p>Total number of cars: {{cars.length}}</p>
-        </div>
+          <li class="list-group-item" ng-repeat="car in cars | filter:query | orderBy:orderProp">
+            <span>{{car.model}}</span>
+            <p>{{car.manufacturer}}</p>
+          </li>
+        </ul>
+        <p>Total number of cars: {{cars.length}}</p>
       </div>
     </div>
+  </div>
 </body>
 
 </html>

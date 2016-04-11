@@ -12,4 +12,6 @@ rrtClientApp.controller('carController', function($scope) {
     { model: 'LaFerrari', manufacturer: 'Ferrari' },
     { model: 'Fusion', manufacturer: 'Ford' },
   ];
+  // dropdown order by default selection.
+  $scope.orderProp = 'model';
 });
