@@ -40,8 +40,10 @@
                 <div class="form-group">
                   <label for="sort" class="control-label">Sort by:</label>
                   <select class="form-control" id="sort" ng-model="orderProp">
-                    <option value="model">Car</option>
-                    <option value="manufacturer">Manufacturer</option>
+                    <option value="model">Car (Asc)</option>
+                    <option value="-model">Car (Dec)</option>
+                    <option value="manufacturer">Manufacturer (Asc)</option>
+                    <option value="-manufacturer">Manufacturer (Dec)</option>
                   </select>
                 </div>
               </fieldset>
