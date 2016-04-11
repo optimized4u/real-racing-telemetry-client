@@ -21,5 +21,9 @@ describe('Real Racing Telemetry Client controllers', function() {
       expect(scope.title).toBe("Admin for Cars and Manufacturers.");
     }));
 
+    it('should set the default value of orderProp model', function() {
+      expect(scope.orderProp).toBe('model');
+    });
+
   });
 });
