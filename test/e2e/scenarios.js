@@ -16,14 +16,14 @@ describe('Real Racing Telemetry Client App', function() {
       var carList = element.all(by.repeater('car in cars'));
       var query = element(by.model('query'));
 
-      expect(carList.count()).toBe(4);
+      expect(carList.count()).toBe(142);
 
-      query.sendKeys('ford');
+      query.sendKeys('atom');
       expect(carList.count()).toBe(2);
 
       query.clear();
-      query.sendKeys('audi');
-      expect(carList.count()).toBe(1);
+      query.sendKeys('r8');
+      expect(carList.count()).toBe(3);
     });
 
     it('should be possible to control car order via the drop down select box', function() {
@@ -36,20 +36,20 @@ describe('Real Racing Telemetry Client App', function() {
           return elm.getText();
         });
       }
-      query.sendKeys('f'); //let's narrow the dataset to make the test assertions shorter
+      query.sendKeys('fo'); //let's narrow the dataset to make the test assertions shorter
 
       expect(getNames()).toEqual([
         "Focus RS",
-        "Fusion",
-        "LaFerrari"
+        "Ford GT",
+        "Ford GT FIA GT1"
       ]);
 
-      element(by.model('orderProp')).element(by.css('option[value="manufacturer"]')).click();
+      element(by.model('orderProp')).element(by.css('option[value="-model"]')).click();
 
       expect(getNames()).toEqual([
-        "LaFerrari",
-        "Focus RS",
-        "Fusion"
+        "Ford GT FIA GT1",
+        "Ford GT",
+        "Focus RS"
       ]);
     });
 
