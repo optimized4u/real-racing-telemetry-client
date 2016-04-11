@@ -7,7 +7,7 @@ describe('Real Racing Telemetry Client App', function() {
   describe('Car list view', function() {
 
     beforeEach(function() {
-      browser.get('app/index.html');
+      browser.get('http://localhost:8000/app/index.html');
     });
 
 
