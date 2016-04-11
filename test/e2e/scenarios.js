@@ -53,5 +53,15 @@ describe('Real Racing Telemetry Client App', function() {
       ]);
     });
 
+    it('should render car specific links', function() {
+      var query = element(by.model('query'));
+      query.clear();
+      query.sendKeys('atom');
+      element.all(by.css('.cars li a')).first().click();
+      browser.getLocationAbsUrl().then(function(url) {
+        expect(url).toBe('/car-detail/56e7037afd49655015a00621');
+      });
+    });
+
   });
 });
