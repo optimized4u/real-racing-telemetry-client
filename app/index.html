@@ -42,8 +42,8 @@
                   <select class="form-control" id="sort" ng-model="orderProp">
                     <option value="model">Car (Asc)</option>
                     <option value="-model">Car (Dec)</option>
-                    <option value="manufacturer">Manufacturer (Asc)</option>
-                    <option value="-manufacturer">Manufacturer (Dec)</option>
+                    <option value="manufacturerId">Manufacturer (Asc)</option>
+                    <option value="-manufacturerId">Manufacturer (Dec)</option>
                   </select>
                 </div>
               </fieldset>
@@ -58,7 +58,7 @@
         <ul class="list-group">
           <li class="list-group-item" ng-repeat="car in cars | filter:query | orderBy:orderProp">
             <span>{{car.model}}</span>
-            <p>{{car.manufacturer}}</p>
+            <p>{{car.manufacturerId}}</p>
           </li>
         </ul>
         <p>Total number of cars: {{cars.length}}</p>

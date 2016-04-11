@@ -4,14 +4,13 @@
 
 var rrtClientApp = angular.module('rrtClientApp', []);
 
-rrtClientApp.controller('carController', function($scope) {
+rrtClientApp.controller('carController', function($scope, $http) {
+
   $scope.title = 'Admin for Cars and Manufacturers.'
-  $scope.cars = [
-    { model: 'Focus RS', manufacturer: 'Ford' },
-    { model: 'R8 V10', manufacturer: 'Audi' },
-    { model: 'LaFerrari', manufacturer: 'Ferrari' },
-    { model: 'Fusion', manufacturer: 'Ford' },
-  ];
+
+  $http.get('data/cars.json').success(function(data) {
+    $scope.cars = data;
+  });
   // dropdown order by default selection.
   $scope.orderProp = 'model';
 });
