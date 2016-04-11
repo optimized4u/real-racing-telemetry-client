@@ -7,7 +7,7 @@ describe('Real Racing Telemetry Client App', function() {
   describe('Car list view', function() {
 
     beforeEach(function() {
-      browser.get('http://localhost:8000/app/index.html');
+      browser.get('http://localhost:8000/app/index.html#/cars');
     });
 
 
@@ -53,13 +53,22 @@ describe('Real Racing Telemetry Client App', function() {
       ]);
     });
 
-    it('should render car specific links', function() {
-      var query = element(by.model('query'));
-      query.clear();
-      query.sendKeys('atom');
-      element.all(by.css('.cars li a')).first().click();
+    it('should redirect index.html to index.html#/cars', function() {
+      browser.get('http://localhost:8000/app/index.html');
       browser.getLocationAbsUrl().then(function(url) {
-        expect(url).toBe('/car-detail/56e7037afd49655015a00621');
+        expect(url).toEqual('/cars');
+      });
+    });
+
+    describe('Phone detail view', function() {
+
+      beforeEach(function() {
+        browser.get('http://localhost:8000/app/index.html#/cars/56e7037afd49655015a00621');
+      });
+
+
+      it('should display placeholder page with carId', function() {
+        expect(element(by.binding('carId')).getText()).toBe('56e7037afd49655015a00621');
       });
     });
 

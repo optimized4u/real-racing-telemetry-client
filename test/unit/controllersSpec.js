@@ -3,7 +3,7 @@
 /* jasmine specs for controllers go here */
 describe('Real Racing Telemetry Client controllers', function() {
 
-  describe('carController', function() {
+  describe('CarListCtrl', function() {
 
     var scope, ctrl, $httpBackend;
 
@@ -18,7 +18,7 @@ describe('Real Racing Telemetry Client controllers', function() {
         respond([{ model: 'Atom 3.5' }, { model: 'Atom V8' }]);
 
       scope = $rootScope.$new();
-      ctrl = $controller('carController', { $scope: scope });
+      ctrl = $controller('CarListCtrl', { $scope: scope });
     }));
 
     it('should create "cars" model with 2 cars fetched from xhr', function() {
