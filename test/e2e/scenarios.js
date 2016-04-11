@@ -25,5 +25,33 @@ describe('Real Racing Telemetry Client App', function() {
       query.sendKeys('audi');
       expect(carList.count()).toBe(1);
     });
+
+    it('should be possible to control car order via the drop down select box', function() {
+
+      var carModelColumn = element.all(by.repeater('car in cars').column('car.model'));
+      var query = element(by.model('query'));
+
+      function getNames() {
+        return carModelColumn.map(function(elm) {
+          return elm.getText();
+        });
+      }
+      query.sendKeys('f'); //let's narrow the dataset to make the test assertions shorter
+
+      expect(getNames()).toEqual([
+        "Focus RS",
+        "Fusion",
+        "LaFerrari"
+      ]);
+
+      element(by.model('orderProp')).element(by.css('option[value="manufacturer"]')).click();
+
+      expect(getNames()).toEqual([
+        "LaFerrari",
+        "Focus RS",
+        "Fusion"
+      ]);
+    });
+
   });
 });
