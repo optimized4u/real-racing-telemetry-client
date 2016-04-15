@@ -1,6 +1,18 @@
 language: node_js
 node_js:
   - "4"
+  
+compiler: clang-3.6
+env:
+  - CXX=clang-3.6
+addons:
+  apt:
+    sources:
+      - llvm-toolchain-precise-3.6
+      - ubuntu-toolchain-r-test
+    packages:
+      - clang-3.6
+      - g++-4.8
 
 before_script:
   - export DISPLAY=:99.0
@@ -10,5 +22,5 @@ before_script:
   - sleep 1 # give server time to start
 
 script:
-  - node_modules/.bin/karma start karma.conf.js --no-auto-watch --single-run --reporters=dots --browsers=Firefox
+  - node_modules/.bin/karma start tests/karma.conf.js --no-auto-watch --single-run --reporters=dots --browsers=Firefox
   - node_modules/.bin/protractor tests/protractor-conf.js --browser=firefox
