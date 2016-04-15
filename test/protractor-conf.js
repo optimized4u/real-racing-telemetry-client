@@ -1,15 +1,15 @@
 exports.config = {
-  allScriptsTimeout: 30000,
+  allScriptsTimeout: 11000,
   seleniumAddress: 'http://localhost:4444/wd/hub',
   specs: [
     'e2e/*.js'
   ],
 
   capabilities: {
-    'browserName': 'chrome'
+    'browserName': 'firefox'
   },
 
-  chromeOnly: true,
+  chromeOnly: false,
 
   framework: 'jasmine',
 
