@@ -2,7 +2,7 @@
   "name": "rrt-client",
   "description": "Client for Real Racing Telemetry API.",
   "version": "0.1.0",
-  "homepage": "https://github.com/optimized4u/real-racing-telemetry-client",
+  "homepage": "https://github.com/optimized4u/real-racing-telemetry-client.git",
   "license": "MIT",
   "private": false,
   "dependencies": {

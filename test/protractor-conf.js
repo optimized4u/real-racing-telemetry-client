@@ -9,8 +9,6 @@ exports.config = {
     'browserName': 'firefox'
   },
 
-  chromeOnly: false,
-
   framework: 'jasmine',
 
   jasmineNodeOpts: {
