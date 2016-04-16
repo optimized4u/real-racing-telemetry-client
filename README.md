@@ -1,5 +1,5 @@
-## Real Racing Telemetry Client ## [![Build Status](https://travis-ci.org/optimized4u/real-racing-telemetry-client.svg?branch=master)](https://travis-ci.org/optimized4u/real-racing-telemetry-client)
-
+## Real Racing Telemetry Client ##
+[![Build Status](https://travis-ci.org/optimized4u/real-racing-telemetry-client.svg?branch=master)](https://travis-ci.org/optimized4u/real-racing-telemetry-client)
 
 The client app front end to go with Real Racing Telemetry which will be API backend only.
 
