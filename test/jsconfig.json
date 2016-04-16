@@ -1,0 +1,9 @@
+{
+  "compilerOptions": {
+    "target": "ES6"
+  },
+  "files": [
+    "e2e/*.js",
+    "unit/*.js"
+  ]
+}
